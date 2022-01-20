@@ -42,7 +42,7 @@ namespace StudentMangement
                  userRemark = "FAIL";
             }
 
-            string insertQuery = "INSERT INTO RESULT(USERNAME,S01,S02,S04,S05,REMARK) VALUES('"+UserName +"','"+ S01 +"','"+ S02 +"','" + S04 + "' ,'" + S05 + "','" +userRemark+"' )";
+            string insertQuery = "INSERT INTO RESULT(USERNAME,S01,S02,S04,S05,REMARK,TOTAL) VALUES('"+UserName +"','"+ S01 +"','"+ S02 +"','" + S04 + "' ,'" + S05 + "','" +userRemark+"','"+Totalobatined+"' )";
             SqlCommand insertCommand = new SqlCommand(insertQuery,sqlconn);
             insertCommand.ExecuteNonQuery();
 
