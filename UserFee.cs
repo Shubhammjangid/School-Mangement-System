@@ -57,9 +57,12 @@ namespace StudentMangement
                                     if(remainFee>0 && fee>=remainFee)
                                     {
                                         sqlconn.Open();
-                                        string payingFee = "UPDATE FEE SET FEE = " + Finalfee + ", REMARK = "+ feeRemark+" WHERE USERNAME= "+ Name +"";
-                                        SqlCommand insertCommand = new SqlCommand(payingFee,sqlconn);
-                                        insertCommand.ExecuteNonQuery();
+                                        string payingFee = "UPDATE FEE SET FEE = '" + Finalfee + "'  WHERE USERNAME = '"+Name+"' ";
+                                        string userFeeRemark = "UPDATE FEE SET REMARK = '" + feeRemark +"' WHERE USERNAME = '"+Name+"'  ";
+                                        SqlCommand updaCommand = new SqlCommand(userFeeRemark,sqlconn);
+                                        SqlCommand updateCommand = new SqlCommand(payingFee,sqlconn);
+                                        updaCommand.ExecuteNonQuery();
+                                        updateCommand.ExecuteNonQuery();
                                     }
                                     else
                                     {
