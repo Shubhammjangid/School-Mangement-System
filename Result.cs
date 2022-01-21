@@ -10,6 +10,7 @@ namespace StudentMangement
         static SqlConnection sqlconn = new SqlConnection(connectionString);
         public void userResult()
         {
+           
             sqlconn.Open();
             string userRemark;
             int total = 500;

@@ -34,14 +34,16 @@ namespace StudentMangement
                         {
 
                            case 1:
-                                if(user.UsernameCheck())
-                                {
-                                    Console.WriteLine("You are already register");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("You are not registered register yourself");
-                                }
+                               Console.WriteLine("Enter your email to check");
+                               string? userEmailID = Console.ReadLine();
+                               if(user.UsernameCheck(userEmailID))
+                               {
+                                   Console.WriteLine("You are already registered");
+                               }
+                               else
+                               {
+                                   Console.WriteLine("You are not registered");
+                               }
                                 break;
 
                             case 2:
