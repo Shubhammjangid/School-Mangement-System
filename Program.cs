@@ -6,7 +6,6 @@ namespace StudentMangement
 {
     internal class Program
     {
-        
         static string connectionString = "SERVER = LAPTOP-C59IR2RT\\SQLEXPRESS; DATABASE=SchoolManagement; USER ID=root; PASSWORD = root@123 ";
         static SqlConnection sqlconn = new SqlConnection(connectionString);
 

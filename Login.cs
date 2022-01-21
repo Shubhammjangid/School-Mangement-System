@@ -13,6 +13,7 @@ namespace StudentMangement
         {
             
             LoginOption loginoption = new LoginOption();
+            userFee fee = new userFee();
             Results res = new Results();
             string? username;
             int? rCode;
@@ -45,16 +46,20 @@ namespace StudentMangement
 
                       int loginChoice = Convert.ToInt32(Console.ReadLine());
 
-
-                      switch(loginChoice)
-                      {
-                          case 1:
-                            res.userResult();
-                            break;
+                     
+                          switch(loginChoice)
+                        {
+                            case 1:
+                                res.userResult();
+                                break;
                             
-                      }
-
-
+                            case 2:
+                                fee.feeStatus();
+                                break;
+                            case 4:
+                                Console.WriteLine("Ok ,bye");
+                                break;
+                        }
                 }
                 else
                 {

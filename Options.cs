@@ -20,10 +20,12 @@ namespace StudentMangement
     {
         public void loginOptionss()
         {
+            Console.WriteLine("----------------------------");
             Console.WriteLine("Press 1 to check your result");
             Console.WriteLine("Press 2 to check your remaining fee");
-            Console.WriteLine("Press 3 to check your attendence");
+            Console.WriteLine("Press 3 to mark  your attendence");
             Console.WriteLine("press 4 to logout from your account");
+            Console.Write("Your reponse ---->");
         }
     }
 

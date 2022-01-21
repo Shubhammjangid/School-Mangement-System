@@ -56,8 +56,9 @@ namespace StudentMangement
 
                 Console.WriteLine("Our school fee is 10000rs how much do you want pay now?");
                 int userFee = Convert.ToInt32(Console.ReadLine());
+                int Storefee = Totalfee - userFee;
 
-                if(Totalfee-userFee!=0)
+                if(Storefee!=0)
                 {
                     userRemark="UNPAID";
                 }
@@ -72,7 +73,7 @@ namespace StudentMangement
                     SqlCommand insertCommand = new SqlCommand(insertQuery,sqlconn);
                     insertCommand.ExecuteNonQuery();
 
-                    string feeQuery = "INSERT INTO FEE(USERNAME,FEE,REMARK) VALUES('"+userUname+"','"+userFee+"','"+userRemark+"')";
+                    string feeQuery = "INSERT INTO FEE(USERNAME,FEE,REMARK) VALUES('"+userUname+"','"+Storefee+"','"+userRemark+"')";
                     SqlCommand inserNewCommand = new SqlCommand(feeQuery,sqlconn);
                     inserNewCommand.ExecuteNonQuery();
                     sqlconn.Close();
