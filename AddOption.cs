@@ -13,6 +13,8 @@ namespace StudentMangement
        
         public void options()
         {
+            int Totalfee = 10000;
+            string? userRemark;
             User us = new User();
 
             
@@ -52,12 +54,27 @@ namespace StudentMangement
                 Console.WriteLine("Enter your passcode once again");
                 int ReCode = Convert.ToInt32(Console.ReadLine());
 
+                Console.WriteLine("Our school fee is 10000rs how much do you want pay now?");
+                int userFee = Convert.ToInt32(Console.ReadLine());
+
+                if(Totalfee-userFee!=0)
+                {
+                    userRemark="UNPAID";
+                }
+                else
+                {
+                    userRemark="PAID";
+                }
                 if(Code==ReCode)
                 {
                     sqlconn.Open();
                     string insertQuery = "INSERT INTO STUDENTDE(USERNAME,EMAIL,PASSWORD,NAME,FATHER_NAME,MOTHER_NAME,ADDRESS,MOBILE) VALUES('"+userUname +"','"+ userEmail +"','"+ Code +"','"+ NameEx +"','" + userFather + "' ,'" + userMother + "','" +userAddress+"' , '" +userNumber+"' )";
                     SqlCommand insertCommand = new SqlCommand(insertQuery,sqlconn);
                     insertCommand.ExecuteNonQuery();
+
+                    string feeQuery = "INSERT INTO FEE(USERNAME,FEE,REMARK) VALUES('"+userUname+"','"+userFee+"','"+userRemark+"')";
+                    SqlCommand inserNewCommand = new SqlCommand(feeQuery,sqlconn);
+                    inserNewCommand.ExecuteNonQuery();
                     sqlconn.Close();
                     Console.WriteLine("Success");
                 }
