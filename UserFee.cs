@@ -12,6 +12,8 @@ namespace StudentMangement
         {
            
             string? UserName;
+
+            Console.WriteLine("------------------------------");
             Console.WriteLine("RE-enter your username to check your fee");
             string? feeUsername = Console.ReadLine();
 
@@ -35,7 +37,8 @@ namespace StudentMangement
                          Console.WriteLine($"HELLO {row["USERNAME"]} your remaining fee is {row["FEE"]}");
                          if(fee>0)
                          {
-                             Console.WriteLine("press 1 to pay remaininf fee");
+                             Console.WriteLine("----------------------------");
+                             Console.WriteLine("press 1 to pay remaining fee");
                              Console.WriteLine("Press 2 to exit");
                              int feeChoice = Convert.ToInt32(Console.ReadLine());
 
@@ -44,6 +47,7 @@ namespace StudentMangement
                                  case 1:
                                     Console.WriteLine($"{row["USERNAME"]} remaining fee is {fee}");
                                     Console.WriteLine("How much do you want to pay now");
+                                    Console.WriteLine("-----------------------------");
                                     int remainFee = Convert.ToInt32(Console.ReadLine());
                                     int Finalfee = fee - remainFee;
                                     if(Finalfee>0)
@@ -71,7 +75,6 @@ namespace StudentMangement
                                     break;
                              }
                          }
-
                      }
                  }
                  else

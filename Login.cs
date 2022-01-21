@@ -56,8 +56,16 @@ namespace StudentMangement
                             case 2:
                                 fee.feeStatus();
                                 break;
+
+                            case 3:
+                                break;
+
                             case 4:
                                 Console.WriteLine("Ok ,bye");
+                                break;
+
+                            default:
+                                Console.WriteLine("Enter information properly or contact admin");
                                 break;
                         }
                 }
@@ -66,7 +74,6 @@ namespace StudentMangement
                     Console.WriteLine("Invalid email id or passcode");
                 }
             }
-
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
