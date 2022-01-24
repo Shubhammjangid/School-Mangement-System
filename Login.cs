@@ -13,6 +13,7 @@ namespace StudentMangement
         {
             
             LoginOption loginoption = new LoginOption();
+            UserAttendence attendence = new UserAttendence();
             userFee fee = new userFee();
             Results res = new Results();
             string? username;
@@ -49,6 +50,10 @@ namespace StudentMangement
                      
                           switch(loginChoice)
                         {
+
+                            #region Case
+                                
+                          
                             case 1:
                                 res.userResult();
                                 break;
@@ -58,6 +63,7 @@ namespace StudentMangement
                                 break;
 
                             case 3:
+                                attendence.userAttend();
                                 break;
 
                             case 4:
@@ -67,6 +73,8 @@ namespace StudentMangement
                             default:
                                 Console.WriteLine("Enter information properly or contact admin");
                                 break;
+
+                            #endregion
                         }
                 }
                 else

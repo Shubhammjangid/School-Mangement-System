@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace StudentMangement
 {
@@ -16,11 +17,9 @@ namespace StudentMangement
             int Totalfee = 10000;
             string? userRemark;
             User us = new User();
-
-            
            
             Console.WriteLine("Enter your Email");
-            string? userEmail =Console.ReadLine();
+            string? userEmail = Console.ReadLine();
 
             if(us.UsernameCheck(userEmail))
             {
@@ -29,7 +28,6 @@ namespace StudentMangement
 
             else
             {
-
                 Console.WriteLine("Enter your Name");
                 string? NameEx = Console.ReadLine();
 

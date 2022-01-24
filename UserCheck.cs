@@ -1,5 +1,7 @@
 using System;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+
 
 namespace StudentMangement
 {
@@ -9,7 +11,7 @@ namespace StudentMangement
     
         static SqlConnection sqlconn = new SqlConnection(connectionString);
         public bool UsernameCheck(string? userEmailID)
-    {
+        {
             // sqlconn.Open();
             bool isUserExisted=false;
 
@@ -31,7 +33,8 @@ namespace StudentMangement
             sqlconn.Close();
             return isUserExisted;
            
-    }
+        }
     
     }
+
 }
